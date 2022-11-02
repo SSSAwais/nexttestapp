@@ -3,7 +3,6 @@ import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import Header from "../components/header";
 import SideBar from "../components/SideBar";
 import styles from "../styles/index.module.css";
-import index from ".";
 import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
