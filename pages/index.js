@@ -1,18 +1,9 @@
-import React from "react";
-
-import MainFile from "./main";
-import Styles from '../styles/index.module.css'
-import Head from "next/head";
-const index = () => {
+import React from 'react'
+import Invoices from './invoices'
+const Home = () => {
   return (
-    <>
- 
-      <div className={Styles.main_view}>
-      
-        <MainFile />
-      </div>
-    </>
-  );
-};
+    <Invoices/>
+  )
+}
 
-export default index;
+export default Home

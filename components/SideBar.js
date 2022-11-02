@@ -19,10 +19,11 @@ const SideBar = () => {
               <>
                 <li key={idx} title={e.title}>
                   <Link href={e.path} >
-                    {" "}
-                    {e.icon}{" "}
+                  <> 
+                    <span>{e.icon}</span>
                     <span className={`${!open && styles.hidden}`}>{e.name}</span>
-                  </Link>
+                    </>
+                    </Link>
                 </li>
               </>
             ))}

@@ -106,30 +106,37 @@ const Invoices = () => {
                       <td></td>
                       <td>
                         <table className="table mb-0">
+                        <tbody>
                           <tr className="text-center">
-                            <td>Packs</td>
-                            <td>Pieces</td>
+                         
+                            <td className="p-0 ">Packs</td>
+                            <td className="p-0">Pieces</td>
                           </tr>
+                          </tbody>
                         </table>
                       </td>
                       <td>Rate</td>
                       <td>Value</td>
                       <td>
                         <table className="table mb-0">
+                        <tbody>
                           <tr className="text-center">
-                            <td>%</td>
-                            <td>Fixed</td>
-                            <td>Amount</td>
+                            <td className="p-0">%</td>
+                            <td className="p-0">Fixed</td>
+                            <td className="p-0">Amount</td>
                           </tr>
+                          </tbody>
                         </table>
                       </td>
                       <td>receivables</td>
                       <td>
                         <table className="table mb-0">
-                          <tr className="text-center">
-                            <td>Packs</td>
-                            <td>Pieces</td>
+                        <tbody>
+                          <tr className="text-center p-0">
+                            <td className="p-0">Packs</td>
+                            <td className="p-0">Pieces</td>
                           </tr>
+                          </tbody>
                         </table>
                       </td>
                     </tr>
@@ -140,80 +147,78 @@ const Invoices = () => {
             <MDBRow className={styles.amount_detail}>
               <MDBCol size="7">
                 <div className={styles.dummydata}>
-                  <p>
-                    <span>Ruppee:</span>
-                    {ruppes}
-                  </p>
+                  <span>Ruppee:</span>
+                  {ruppes}
                 </div>
               </MDBCol>
               <MDBCol size="4">
+              
                 <table className="w-100">
-                  <tr>
-                    <td>
-                      <MDBInput
-                        label="Total Value "
-                        readonly
-                        value={totalValue}
-                        className={styles.inputvalue}
-                        size="lg"
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <MDBInput
-                        label="LumSum Discount "
-                        readonly
-                        value={lumsum}
-                        className={styles.inputvalue}
-                        size="lg"
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <MDBInput
-                        label="Total Net Receivables "
-                        readonly
-                        value={receivables}
-                        className={styles.inputvalue}
-                        size="lg"
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <MDBInput
-                        label="Received Amount "
-                        type="number"
-                        value={received}
-                        className={styles.inputvalue}
-                        onChange={(e)=>setReceived(e.target.value)}
-                        size="lg"
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <MDBInput
-                        label="Remaining Amount"
-                        readonly
-                        value={remaing}
-                        className={styles.inputvalue}
-                        size="lg"
-                      />
-                    </td>
-                  </tr>
+                  <tbody>
+                   <tr>
+                      <td> 
+                        <MDBInput
+                          label="Total Value "
+                          readonly
+                          value={totalValue}
+                          className={styles.inputvalue}
+                          size="lg"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <MDBInput
+                          label="LumSum Discount "
+                          readonly
+                          value={lumsum}
+                          className={styles.inputvalue}
+                          size="lg"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <MDBInput
+                          label="Total Net Receivables "
+                          readonly
+                          value={receivables}
+                          className={styles.inputvalue}
+                          size="lg"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <MDBInput
+                          label="Received Amount "
+                          type="number"
+                          value={received}
+                          className={styles.inputvalue}
+                          onChange={(e) => setReceived(e.target.value)}
+                          size="lg"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <MDBInput
+                          label="Remaining Amount"
+                          readonly
+                          value={remaing}
+                          className={styles.inputvalue}
+                          size="lg"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
               </MDBCol>
             </MDBRow>
             <MDBRow>
-            <MDBCol size="12">
-              <p className="mt-3"> <MDBInput
-              label="Remarks"
-              size="md"
-            /></p>
-            </MDBCol>
+              <MDBCol size="12">
+                <MDBInput label="Remarks" size="md" />
+              </MDBCol>
             </MDBRow>
           </MDBContainer>
         </div>
