@@ -1,0 +1,13 @@
+.main_view {
+  display: flex;
+}
+.main_view {
+  padding-top: 100px;
+}
+.main_div{
+  display:flex;
+}
+.right_content{
+  padding-top: 90px;
+  width:100%;
+}

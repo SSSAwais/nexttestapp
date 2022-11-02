@@ -1,0 +1,32 @@
+.tableData{
+    border-bottom: 0px;
+    padding: 10px 10px !important;
+}
+.topSection{
+    background: #e4edf3;
+}
+.input{
+    background: white !important;
+    color: black !important;
+}
+.tableRowOne{
+    text-align: center;
+}
+.dummydata{
+    border:1px solid gray;
+    border-radius: 5px;
+}
+.dummydata p{
+    margin-bottom: 0px;
+    padding:5px;
+}
+.inputvalue{
+    background: white !important;
+    padding:2px 10px !important;
+    margin-top: 10px;
+}
+.amount_detail{
+    display:flex;
+    justify-content: space-between;
+    align-items: end;
+}
