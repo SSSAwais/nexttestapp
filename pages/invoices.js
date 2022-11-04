@@ -216,7 +216,7 @@ const Invoices = () => {
               </MDBCol>
             </MDBRow>
             <MDBRow>
-              <MDBCol size="12">
+              <MDBCol size="12" className="mt-3">
                 <MDBInput label="Remarks" size="md" />
               </MDBCol>
             </MDBRow>

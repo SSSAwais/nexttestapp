@@ -1,0 +1,9 @@
+.dropdownsection{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.dropdownsection ul.dropdown-menu.show.animation {
+    width: 100%;
+}
