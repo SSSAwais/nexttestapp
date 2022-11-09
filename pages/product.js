@@ -13,13 +13,12 @@ import {
 } from "mdb-react-ui-kit";
 import React, { useEffect, useState } from "react";
 import Abs_Heading from "../abs_Components/absHeading/abs_Heading";
+import AbsProductList from "../abs_Components/absProductList/absProductList";
 import AddProductform from "../components/addProduct/addProductform";
-import { LS_PRODUCT_DATA } from "../redux/consts";
-import { lsGetItem, lsSetItem } from "../utils/helpers";
-
 const Product = () => {
+  const [editingId, setEditingId] = useState("");
   const [basicActive, setBasicActive] = useState("tab1");
-  // const [productData, setProductData] = useState(lsGetItem(LS_PRODUCT_DATA));
+  const [productData, setProductData] = useState([]);
   const handleBasicClick = (value) => {
     if (value === basicActive) {
       return;
@@ -27,10 +26,13 @@ const Product = () => {
 
     setBasicActive(value);
   };
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem("productData"));
+    if (items) {
+      setProductData(items);
+    }
+  }, []);
 
-  // useEffect(() => {
-  //   lsSetItem(LS_PRODUCT_DATA, productData);
-  // }, [productData]);
   return (
     <>
       <MDBContainer>
@@ -47,7 +49,7 @@ const Product = () => {
                   onClick={() => handleBasicClick("tab1")}
                   active={basicActive === "tab1"}
                 >
-                  Tab 1
+                  Add Product
                 </MDBTabsLink>
               </MDBTabsItem>
               <MDBTabsItem>
@@ -55,7 +57,7 @@ const Product = () => {
                   onClick={() => handleBasicClick("tab2")}
                   active={basicActive === "tab2"}
                 >
-                  Tab 2
+                  View Product List
                 </MDBTabsLink>
               </MDBTabsItem>
             </MDBTabs>
@@ -78,7 +80,41 @@ const Product = () => {
                     </tr>
                   </MDBTableHead>
                   <MDBTableBody>
-                  
+                    {productData.map((e, idx) => {
+                      if (e.id == editingId) {
+                        return (
+                          <tr>
+                            <td colSpan={10}>
+                              <AddProductform
+                                updateData={(data) => {
+                                  setEditingId("");
+                                }}
+                              />
+                            </td>
+                          </tr>
+                        );
+                      } else {
+                        return (
+                          <AbsProductList
+                            id={e.id}
+                            key={idx}
+                            ProductName={e.product}
+                            itemCategory={e.itemCategory}
+                            price={e.unitPrice}
+                            qty={e.qty}
+                            carton={e.ctnPrice}
+                            fixedValue={e.fixedValue}
+                            company={e.company}
+                            pressDlt={() => {
+                              setProductData(
+                                productData.filter((ele) => ele.id !== e.id)
+                              );
+                            }}
+                             editPress={() => setEditingId(e.id)}
+                          />
+                        );
+                      }
+                    })}
                   </MDBTableBody>
                 </MDBTable>
               </MDBTabsPane>

@@ -3,6 +3,7 @@ import {
   MDBContainer,
   MDBRow,
   MDBTable,
+  MDBTableBody,
   MDBTableHead,
   MDBTabs,
   MDBTabsContent,
@@ -10,12 +11,14 @@ import {
   MDBTabsLink,
   MDBTabsPane,
 } from "mdb-react-ui-kit";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import AbsClientPro from "../abs_Components/absClient/absClient";
 import Abs_Heading from "../abs_Components/absHeading/abs_Heading";
 import AddClient from "../components/addClient/addClient";
 
 const Client = () => {
-
+  const [clientData,setClientData]=useState([]);
+  const [editId, setEditId] = useState("");
   const [basicActive, setBasicActive] = useState("tab1");
   const handleBasicClick = (value) => {
     if (value === basicActive) {
@@ -24,6 +27,12 @@ const Client = () => {
 
     setBasicActive(value);
   };
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('clientData'));
+    if (items) {
+      setClientData(items);
+    }
+  }, []);
   return (
     <>
       <section>
@@ -56,7 +65,7 @@ const Client = () => {
 
               <MDBTabsContent>
                 <MDBTabsPane show={basicActive === "tab1"}>
-                  <AddClient />
+                  <AddClient updateClient={(data) => setClientData(data)}  />
                 </MDBTabsPane>
                 <MDBTabsPane show={basicActive === "tab2"}>
                   <MDBTable>
@@ -69,7 +78,37 @@ const Client = () => {
                         <th scope="col">Number</th>
                       </tr>
                     </MDBTableHead>
+                    <MDBTableBody>
+                      {
+                        clientData.map((e,idx)=>{
+                         if(e.id==editId){
+                          return(
+                            <tr>
+                            <td>
+                            <AddClient updateClient={(data)=>{
+                              setEditId("");
+                            }}/>
+                            </td>
+                            </tr>
+                          );
+                         }else{
+                          return(
+                            <AbsClientPro
+                            key={idx}
+                            id={e.id}
+                            clientName={e.clientName}
+                            number={e.number}
+                            address={e.address}
+                            shop={e.shop}
+                            editPress={() => setEditId(e.id)}
+                            />
+                          )
+                         }
+                        })
+                      }
+                    </MDBTableBody>
                   </MDBTable>
+
                 </MDBTabsPane>
               </MDBTabsContent>
             </MDBCol>

@@ -1,16 +1,49 @@
 import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AbsButton from "../../abs_Components/absButton/absButton";
 import AbsInput from "../../abs_Components/absInput/absInput";
 
-const AddClient = () => {
+const AddClient = ({updateClient }) => {
     const [clientName,setClientName]=useState('');
     const [number,setNumber]=useState('');
     const [address,setAddress]=useState('');
     const [shop,setShop]=useState('');
+    const [clientData,setClientData]=useState([]);
+
+  const handleClientForm=(e)=>{
+    e.preventDefault();
+    const NewClient=[
+      ...clientData,{
+        id:clientData.length+1,
+        clientName,
+        number,
+        address,
+        shop
+      }
+    ]
+    updateClient (NewClient);
+    // clientName("");
+    // number("");
+    // address("");
+    // shop("");
+  }
+
+useEffect(() => {
+  localStorage.setItem('clientData', JSON.stringify(clientData));
+}, [clientData]);
+
+useEffect(() => {
+  const items = JSON.parse(localStorage.getItem('clientData'));
+  if (items) {
+    setClientData(items);
+  }
+}, []);
+
+
+
   return (
     <>
-      <form>
+      <form onSubmit={handleClientForm}>
         <MDBContainer>
           <MDBRow>
             <MDBCol size="6">

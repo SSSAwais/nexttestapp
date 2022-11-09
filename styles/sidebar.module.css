@@ -64,9 +64,7 @@
 .lists_ li {
   list-style-type: none;
   font-weight: 500 !important;
-  padding-bottom: 15px;
 
-  padding-top: 15px;
   border-bottom: 1px solid #ced4da;
   display: block;
 }
@@ -74,4 +72,6 @@
   color: black;
   display: block;
   padding-left: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }

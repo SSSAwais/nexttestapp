@@ -1,12 +1,37 @@
 import { MDBCol, MDBRow, MDBTextArea } from "mdb-react-ui-kit";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AbsButton from "../../abs_Components/absButton/absButton";
 import AbsInput from "../../abs_Components/absInput/absInput";
 
-const AddExpense = () => {
+const AddExpense = ({updateExpense}) => {
+const [date,setDate]=useState("");
+const [expTitle,etExpTitle]=useState("");
+const [expAmount,setExpAmount]=useState("");
+const [expDetail,etExpDetail]=useState("");
+const [allExpDetail,setAllExpDetail]=useState([]);
   const handleTask = (e) => {
     e.preventDefault();
+    const NewAllExpDetail=[
+      ...allExpDetail,{
+        date,
+        expTitle,
+        expAmount,
+        expDetail
+      }
+    ]
+    updateExpense(NewAllExpDetail);
   };
+  
+useEffect(() => {
+  localStorage.setItem('allExpDetail', JSON.stringify(allExpDetail));
+}, [allExpDetail]);
+
+useEffect(() => {
+  const items = JSON.parse(localStorage.getItem('allExpDetail'));
+  if (items) {
+    setAllExpDetail(items);
+  }
+}, []);
   return (
     <>
       <form onSubmit={handleTask}>

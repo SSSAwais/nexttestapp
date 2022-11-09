@@ -29,3 +29,9 @@ a {
 table td{
   border-bottom:none;
 }
+.react-stacked-center-carousel-slide--1 {
+  left: 335px !important;
+}
+.react-stacked-center-carousel-slide-1 {
+  left: calc(50% - 175px) !important;
+}
