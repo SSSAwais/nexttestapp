@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBTypography } from "mdb-react-ui-kit";
 const ContactUs = () => {
     const [detail, setDetail] = useState([
