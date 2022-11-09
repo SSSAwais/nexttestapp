@@ -83,7 +83,7 @@ const Product = () => {
                     {productData.map((e, idx) => {
                       if (e.id == editingId) {
                         return (
-                          <tr>
+                          <tr key={idx}>
                             <td colSpan={10}>
                               <AddProductform
                                 updateData={(data) => {

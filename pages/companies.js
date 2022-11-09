@@ -86,8 +86,8 @@ const Company = () => {
                       {compAllDetail.map((e, idx) => {
                         if (e.id == taskId) {
                           return (
-                            <tr>
-                              <td colSpan={6}>
+                            <tr key={idx}>
+                              <td colSpan={6} key={idx}>
                                 <AddCompany
                                   updateCompany={(data) => {
                                     setTaskId("");

@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
+import { MDBContainer, MDBRow, MDBCol, MDBTypography } from "mdb-react-ui-kit";
 const ContactUs = () => {
     const [detail, setDetail] = useState([
         {

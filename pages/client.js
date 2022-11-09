@@ -83,8 +83,8 @@ const Client = () => {
                         clientData.map((e,idx)=>{
                          if(e.id==editId){
                           return(
-                            <tr>
-                            <td>
+                            <tr key={idx}>
+                            <td key={idx}>
                             <AddClient updateClient={(data)=>{
                               setEditId("");
                             }}/>

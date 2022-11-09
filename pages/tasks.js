@@ -84,7 +84,7 @@ const Tasks = () => {
                       {taskDetail.map((e, idx) => {
                         if (e.id == editId) {
                           return (
-                            <tr>
+                            <tr key={idx}>
                               <td>
                                 <AddTask
                                   updateTask={(data) => {
