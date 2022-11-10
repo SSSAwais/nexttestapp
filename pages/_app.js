@@ -6,8 +6,9 @@ import styles from "../styles/index.module.css";
 import store, { persistor } from "../redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
-import SideBar from "../components/SideBar";
+
 import { useSelector } from 'react-redux';
+import Sidebar from './sidebar';
 function MyApp({ Component, pageProps }) {
 
   return (
@@ -18,7 +19,7 @@ function MyApp({ Component, pageProps }) {
           
           <div className={styles.main_div}>
             <div className={styles.right_content}>
-        
+               <Sidebar/>
               <Component {...pageProps} />
             </div>
           </div>
