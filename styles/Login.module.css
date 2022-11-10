@@ -1,0 +1,17 @@
+.cascading_right{
+    margin-right: -50px;
+    border-radius: 8px;
+    width: 85%;
+    float: right;
+}
+.btn_signIn{
+    background: #393939;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    height: 40px;
+    width: 200px;
+    
+}
