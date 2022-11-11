@@ -74,6 +74,7 @@ const PriceList = () => {
 
   return (
     <>
+    <section className="w-100">
       <MDBContainer>
         <MDBRow>
           <MDBCol>
@@ -213,6 +214,7 @@ const PriceList = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+      </section>
     </>
   );
 };

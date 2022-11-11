@@ -22,6 +22,7 @@ const Stock = () => {
   ]);
   return (
     <>
+    <section className="w-100">
       <MDBContainer>
         <MDBRow>
           <MDBCol>
@@ -56,6 +57,7 @@ const Stock = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+      </section>
     </>
   );
 };

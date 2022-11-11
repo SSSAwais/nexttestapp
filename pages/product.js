@@ -35,6 +35,7 @@ const Product = () => {
 
   return (
     <>
+    <section className="w-100">
       <MDBContainer>
         <MDBRow>
           <MDBCol size="12">
@@ -122,6 +123,7 @@ const Product = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+      </section>
     </>
   );
 };

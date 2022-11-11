@@ -14,11 +14,13 @@ const Sidebar = () => {
   return (
     <>
       <div className="content">
-         {auth ? <SideBar /> :<Login/> }
+         {auth ? <SideBar /> :" "}
+         
+        
+         
       </div>
-      <div className="eror">
-        <h2>Resolution Not Supported</h2>
-      </div>
+      {auth ?"":<Login/> }
+   
     </>
   );
 };

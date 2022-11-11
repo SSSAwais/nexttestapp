@@ -5,6 +5,12 @@
 width: 100%;
 }
 .right_content{
+
+  display: flex;
   padding-top: 90px;
-  width:100%;
+  width: 100%;
+
+}
+.main_sections section{
+  width: 100%;
 }

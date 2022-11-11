@@ -19,8 +19,12 @@ function MyApp({ Component, pageProps }) {
           
           <div className={styles.main_div}>
             <div className={styles.right_content}>
+           
                <Sidebar/>
+              
               <Component {...pageProps} />
+          
+      
             </div>
           </div>
         </PersistGate>

@@ -31,6 +31,7 @@ const Payments = () => {
   };
   return (
     <>
+    <section className="w-100">
       <MDBContainer>
         <MDBRow>
           <MDBCol>
@@ -123,6 +124,7 @@ const Payments = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+      </section>
     </>
   );
 };

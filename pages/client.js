@@ -35,7 +35,7 @@ const Client = () => {
   }, []);
   return (
     <>
-      <section>
+      <section className="w-100">
         <MDBContainer>
           <MDBRow>
             <MDBCol>

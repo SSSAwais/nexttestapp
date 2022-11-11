@@ -26,10 +26,10 @@ const Login = () => {
  
   return (
     <>
-      <section className="text-center text-lg-start">
+      <section className="text-center text-lg-start w-100">
         <div className="container py-4">
           <div className="row g-0 align-items-center">
-            <div className="col-lg-6 mb-5 mb-lg-0">
+            <div className="col-lg-6 mb-6 mb-lg-0">
               <div
                 className={styless.cascading_right}
                 style={{
@@ -101,7 +101,7 @@ const Login = () => {
               </div>
             </div>
 
-            <div className="col-lg-6 mb-5 mb-lg-0">
+            <div className="col-lg-6 mb-6 mb-lg-0">
               <img
                 src="/assets/images/login2.jpg"
                 className="w-100 rounded-4 shadow-4"

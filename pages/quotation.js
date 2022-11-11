@@ -14,7 +14,7 @@ import styles from "../styles/quotation.module.css";
 const Quotation = () => {
   return (
     <>
-      <section>
+      <section className="w-100">
         <div className={styles.topSection}>
           <MDBContainer>
             <MDBRow>

@@ -21,7 +21,7 @@ const Invoices = () => {
   const [remaing, setRemaing] = useState(0);
   return (
     <>
-      <section>
+      <section className="w-100">
         <div className={styles.topSection}>
           <MDBContainer>
             <MDBRow>
